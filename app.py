@@ -1,12 +1,7 @@
-from motherboard.logger import logging
-from motherboard.exception import AppException
-import sys
-
-logging.info("welcome to cusrtom logging")
+import sys,os
+from motherboard.pipeline.training_pipeline import TrainPipeline
 
 
-try:
-    a=4/"6"
-
-except Exception as e:
-    raise AppException(e, sys)
+obj = TrainPipeline()
+obj.run_pipeline()
+print("Training done")
